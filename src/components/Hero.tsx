@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { ArrowDown, Download, Github, Linkedin, Twitter, Instagram } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import heroImage from '@/assets/hero-bg.jpg';
-import profileImage from '@/assets/juliet-profile.jpg';
+
 
 const Hero = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -38,14 +38,7 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 text-center text-white">
         <div className={`transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
-          {/* Profile Image */}
-          <div className="mb-8">
-            <img 
-              src={profileImage} 
-              alt="Juliet Mulwa" 
-              className="w-32 h-32 rounded-full mx-auto border-4 border-white/20 shadow-elegant-xl"
-            />
-          </div>
+         
 
           {/* Text Content */}
           <div className="space-y-6 mb-12">
