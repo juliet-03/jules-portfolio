@@ -1,0 +1,167 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+/* Professional Portfolio Design System for Juliet Mulwa */
+@layer base {
+  :root {
+    /* Core Brand Colors */
+    --background: 220 20% 98%;
+    --foreground: 230 25% 15%;
+    
+    /* Primary Brand - Deep Blue */
+    --primary: 230 45% 25%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 230 45% 20%;
+    
+    /* Secondary - Sky Blue */
+    --secondary: 200 80% 85%;
+    --secondary-foreground: 230 45% 25%;
+    --secondary-hover: 200 80% 80%;
+    
+    /* Accent - Gold */
+    --accent: 45 85% 55%;
+    --accent-foreground: 230 45% 25%;
+    --accent-hover: 45 85% 50%;
+    
+    /* Surface Colors */
+    --card: 0 0% 100%;
+    --card-foreground: 230 25% 15%;
+    --card-border: 220 15% 90%;
+    
+    /* Interactive States */
+    --muted: 220 15% 95%;
+    --muted-foreground: 230 15% 45%;
+    --border: 220 15% 88%;
+    --input: 220 15% 96%;
+    --ring: 230 45% 25%;
+    
+    /* Status Colors */
+    --success: 140 65% 45%;
+    --warning: 35 85% 55%;
+    --destructive: 0 70% 55%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(230 45% 25%), hsl(230 45% 35%));
+    --gradient-hero: linear-gradient(135deg, hsl(230 45% 25%) 0%, hsl(200 80% 45%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(45 85% 55%), hsl(45 85% 65%));
+    --gradient-card: linear-gradient(135deg, hsl(0 0% 100%) 0%, hsl(220 20% 98%) 100%);
+    
+    /* Shadows */
+    --shadow-sm: 0 2px 4px -1px hsl(230 45% 25% / 0.05);
+    --shadow-md: 0 4px 12px -2px hsl(230 45% 25% / 0.1);
+    --shadow-lg: 0 8px 24px -4px hsl(230 45% 25% / 0.15);
+    --shadow-xl: 0 12px 40px -8px hsl(230 45% 25% / 0.2);
+    
+    /* Animation */
+    --transition-fast: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter;
+    scroll-behavior: smooth;
+  }
+  
+  section {
+    scroll-margin-top: 5rem;
+  }
+}
+
+@layer components {
+  /* Hero Button Styles */
+  .btn-hero {
+    @apply bg-gradient-to-br from-primary to-primary-hover text-primary-foreground 
+           px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl 
+           transform hover:-translate-y-1 transition-all duration-300;
+  }
+  
+  .btn-accent {
+    @apply bg-gradient-to-br from-accent to-accent-hover text-accent-foreground 
+           px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl 
+           transform hover:-translate-y-1 transition-all duration-300;
+  }
+  
+  .btn-outline {
+    @apply border-2 border-primary text-primary bg-transparent px-8 py-4 rounded-xl 
+           font-semibold text-lg hover:bg-primary hover:text-primary-foreground 
+           transition-all duration-300;
+  }
+  
+  /* Card Styles */
+  .card-elegant {
+    @apply bg-gradient-to-br from-card to-muted border border-card-border 
+           rounded-2xl p-6 shadow-md hover:shadow-lg transition-all duration-300 
+           hover:-translate-y-1;
+  }
+  
+  /* Skill Bar */
+  .skill-bar {
+    @apply h-3 bg-muted rounded-full overflow-hidden;
+  }
+  
+  .skill-progress {
+    @apply h-full bg-gradient-to-r from-primary to-accent rounded-full 
+           transition-all duration-1000 ease-out;
+  }
+  
+  /* Animations */
+  .fade-in-up {
+    @apply opacity-0 translate-y-8 transition-all duration-700 ease-out;
+  }
+  
+  .fade-in-up.visible {
+    @apply opacity-100 translate-y-0;
+  }
+  
+  .stagger-children > * {
+    @apply transition-all duration-700 ease-out;
+  }
+}

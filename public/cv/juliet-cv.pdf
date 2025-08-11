@@ -1,0 +1,3 @@
+# This is a placeholder file for Juliet's CV
+# In a real implementation, this would be an actual PDF file
+# The file path is referenced in the Hero component's Download CV button
